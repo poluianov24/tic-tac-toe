@@ -8,16 +8,20 @@ def Playground():
 
 def Win():
     if q == w == e == 'O' or r == t == y == 'O' or u == i == o == 'O' or q == r == u == 'O' or w == t == i == 'O' or e == y == o == 'O' or q == t == o == 'O' or e == t == u == 'O':
-        print('Переміг гравець 1!')
+        print('\033[32mПереміг гравець 1!')
         return 1
     elif q == w == e == 'X' or r == t == y == 'X' or u == i == o == 'X' or q == r == u == 'X' or w == t == i == 'X' or e == y == o == 'X' or q == t == o == 'X' or e == t == u == 'X':
-        print('Переміг гравець 2!')
+        print('\033[32mПереміг гравець 2!')
         return 2
+    elif q != ' ' and w != ' ' and e != ' ' and r != ' ' and t != ' ' and y != ' ' and u != ' ' and i != ' ' and o != ' ':
+        print('\033[32mПеремогла дружба!')
+        return 3
 
 
 q = w = e = r = t = y = u = i = o = ' '
 win_1 = 0
 win_2 = 0
+not_win = 0
 print('''\033[32mЗапам'ятайте № полів для здійснення ходів
 \033[35m 1 | 2 | 3 
 - - - - - -
@@ -69,7 +73,7 @@ while True:
     win = Win()
     if win == 1:
         win_1 += 1
-        print(f'\033[35mГравець №1 - {win_1}   Гравець №2 - {win_2}')
+        print(f'\033[36mГравець №1 - {win_1}    Гравець №2 - {win_2}    Нічия - {not_win}')
         cont = input('\033[33mДля продовження натисніть "Enter" \033[34m(для виходу введіть "0")\033[33m: ')
         if cont == '0':
             break
@@ -78,7 +82,16 @@ while True:
             continue
     elif win == 2:
         win_2 += 1
-        print(f'\033[35mГравець №1 - {win_1}   Гравець №2 - {win_2}')
+        print(f'\033[36mГравець №1 - {win_1}    Гравець №2 - {win_2}    Нічия - {not_win}')
+        cont = input('\033[33mДля продовження натисніть "Enter" \033[34m(для виходу введіть "0")\033[33m: ')
+        if cont == '0':
+            break
+        else:
+            q = w = e = r = t = y = u = i = o = ' '
+            continue
+    elif win == 3:
+        not_win += 1
+        print(f'\033[36mГравець №1 - {win_1}    Гравець №2 - {win_2}    Нічия - {not_win}')
         cont = input('\033[33mДля продовження натисніть "Enter" \033[34m(для виходу введіть "0")\033[33m: ')
         if cont == '0':
             break
@@ -129,7 +142,7 @@ while True:
     win = Win()
     if win == 1:
         win_1 += 1
-        print(f'\033[35mГравець №1 - {win_1}   Гравець №2 - {win_2}')
+        print(f'\033[36mГравець №1 - {win_1}    Гравець №2 - {win_2}    Нічия - {not_win}')
         cont = input('\033[33mДля продовження натисніть "Enter" \033[34m(для виходу введіть "0")\033[33m: ')
         if cont == '0':
             break
@@ -138,7 +151,16 @@ while True:
             continue
     elif win == 2:
         win_2 += 1
-        print(f'\033[35mГравець №1 - {win_1}   Гравець №2 - {win_2}')
+        print(f'\033[36mГравець №1 - {win_1}    Гравець №2 - {win_2}    Нічия - {not_win}')
+        cont = input('\033[33mДля продовження натисніть "Enter" \033[34m(для виходу введіть "0")\033[33m: ')
+        if cont == '0':
+            break
+        else:
+            q = w = e = r = t = y = u = i = o = ' '
+            continue
+    elif win == 3:
+        not_win += 1
+        print(f'\033[36mГравець №1 - {win_1}    Гравець №2 - {win_2}    Нічия - {not_win}')
         cont = input('\033[33mДля продовження натисніть "Enter" \033[34m(для виходу введіть "0")\033[33m: ')
         if cont == '0':
             break
