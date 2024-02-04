@@ -8,10 +8,10 @@ def Playground():
 
 def Win():
     if q == w == e == '\033[93mO' or r == t == y == '\033[93mO' or u == i == o == '\033[93mO' or q == r == u == '\033[93mO' or w == t == i == '\033[93mO' or e == y == o == '\033[93mO' or q == t == o == '\033[93mO' or e == t == u == '\033[93mO':
-        print('\033[32mПереміг \033[93mOГравець №1\033[32m!!!')
+        print('\033[32mПереміг \033[93mГравець №1\033[32m!!!')
         return 1
     elif q == w == e == '\033[94mX' or r == t == y == '\033[94mX' or u == i == o == '\033[94mX' or q == r == u == '\033[94mX' or w == t == i == '\033[94mX' or e == y == o == '\033[94mX' or q == t == o == '\033[94mX' or e == t == u == '\033[94mX':
-        print('\033[32mПереміг \033[94mOГравець №2\033[32m!!!')
+        print('\033[32mПереміг \033[94mГравець №2\033[32m!!!')
         return 2
     elif q != ' ' and w != ' ' and e != ' ' and r != ' ' and t != ' ' and y != ' ' and u != ' ' and i != ' ' and o != ' ':
         print('\033[33mПеремогла дружба!')
@@ -24,10 +24,6 @@ win_2 = 0
 not_win = 0
 
 inp = '\033[32mДля продовження натисніть "Enter" \033[37m(для виходу введіть "0", переглянути № полів - "info")\033[32m: '
-
-res = f'''\033[36m
-Рузультати:
-\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}'''
 
 info = '''\033[32mЗапам'ятайте № полів для здійснення ходів
 \033[35m 1 | 2 | 3 
@@ -75,7 +71,7 @@ while True:
                 o = '\033[93mO'
                 break
             elif play1 == 0:
-                print(res)
+                print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
                 print('\033[31m\nДо зустрічі!')
                 exit()
             elif play1 > 9:
@@ -88,10 +84,10 @@ while True:
     win = Win()
     if win == 1:
         win_1 += 1
-        print(res)
+        print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
         cont = input(f'{inp}')
         if cont == '0':
-            print(res)
+            print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
             print('\033[31m\nДо зустрічі!')
             break
         elif cont == 'info':
@@ -101,10 +97,10 @@ while True:
             continue
     elif win == 2:
         win_2 += 1
-        print(res)
+        print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
         cont = input(f'{inp}')
         if cont == '0':
-            print(res)
+            print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
             print('\033[31m\nДо зустрічі!')
             break
         elif cont == 'info':
@@ -114,10 +110,10 @@ while True:
             continue
     elif win == 3:
         not_win += 1
-        print(res)
+        print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
         cont = input(f'{inp}')
         if cont == '0':
-            print(res)
+            print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
             print('\033[31m\nДо зустрічі!')
             break
         elif cont == 'info':
@@ -163,7 +159,7 @@ while True:
                 o = '\033[94mX'
                 break
             elif play2 == 0:
-                print(res)
+                print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
                 print('\033[31m\nДо зустрічі!')
                 exit()
             elif play2 > 9:
@@ -176,10 +172,10 @@ while True:
     win = Win()
     if win == 1:
         win_1 += 1
-        print(res)
+        print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
         cont = input(f'{inp}')
         if cont == '0':
-            print(res)
+            print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
             print('\033[31m\nДо зустрічі!')
             break
         elif cont == 'info':
@@ -189,10 +185,11 @@ while True:
             continue
     elif win == 2:
         win_2 += 1
-        print(res)
+        print('\033[36mРузультати:')
+        print('\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
         cont = input(f'{inp}')
         if cont == '0':
-            print(res)
+            print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
             print('\033[31m\nДо зустрічі!')
             break
         elif cont == 'info':
@@ -202,10 +199,10 @@ while True:
             continue
     elif win == 3:
         not_win += 1
-        print(res)
+        print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
         cont = input(f'{inp}')
         if cont == '0':
-            print(res)
+            print(f'\033[36mРузультати: \n\033[93mГравець №1 - {win_1}    \033[94mГравець №2 - {win_2}    \033[36mНічия - {not_win}')
             print('\033[31m\nДо зустрічі!')
             break
         elif cont == 'info':
